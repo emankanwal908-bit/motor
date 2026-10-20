@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e1116">
+<title>VELOCE – Race-Grade Motorcycle Suits &amp; Riding Gear | Demo by Aevora Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Crect width=%2248%22 height=%2248%22 fill=%22%230e1116%22/%3E%3Cpath d=%22M8 10h10l6 20 6-20h10L28 40H20z%22 fill=%22%23e5161d%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e5161d;--ink:#0e1116;--gr:#e9ebef;--st:#8b93a1;--m:#e5161d;--a:#f4f4f5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.6 Barlow,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3,.dp{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.005em}
+h2{font-size:clamp(44px,7vw,98px)}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+section{padding:clamp(70px,10vw,120px) 0;scroll-margin-top:70px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 34px;border:0;background:var(--red);color:#fff;font:700 15px Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:transform .2s,background .2s}
+.btn:hover{transform:translateX(5px);background:#fff;color:var(--ink)}.bk{background:var(--ink)}.bk:hover{background:var(--red);color:#fff}
+.bo{background:rgba(255,255,255,.16)}
+.pbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:var(--red);transform:scaleX(0);transform-origin:left}
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s}header.s{background:rgba(14,17,22,.94);backdrop-filter:blur(10px)}
+.nv{display:flex;align-items:center;justify-content:space-between;height:76px;color:#fff;gap:20px}
+.logo{font:900 30px 'Big Shoulders Display';letter-spacing:.04em;font-style:italic;display:flex;align-items:center;gap:8px}.logo i{width:24px;height:24px;background:var(--red);clip-path:polygon(0 0,40% 0,50% 60%,60% 0,100% 0,62% 100%,38% 100%)}
+.lk{display:flex;gap:32px;font:600 15px Barlow;text-transform:uppercase;letter-spacing:.08em}.lk a{opacity:.8;padding:6px 0;border-bottom:2px solid transparent;transition:.2s}.lk a:hover,.lk a.act{opacity:1;border-color:var(--red)}
+.nr{display:flex;gap:10px;align-items:center}
+.ct{position:relative;width:48px;height:48px;border:1.5px solid rgba(255,255,255,.4);background:none;color:#fff;cursor:pointer;display:grid;place-items:center}.ct b{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;background:var(--red);font:700 12px/22px Barlow;text-align:center;transition:transform .3s}.ct.bump b{transform:scale(1.6)}
+.bgr{display:none;width:48px;height:48px;background:none;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;position:relative}.bgr span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:.3s}.bgr span:first-child{top:19px}.bgr span:last-child{top:27px}
+.bgr.o span:first-child{top:23px;transform:rotate(45deg)}.bgr.o span:last-child{top:23px;transform:rotate(-45deg)}
+.mp{position:fixed;inset:76px 0 auto;z-index:49;background:var(--ink);padding:8px 24px 26px;display:flex;flex-direction:column;transform:translateY(-10px);opacity:0;visibility:hidden;transition:.3s}.mp.o{transform:none;opacity:1;visibility:visible}
+.mp a{color:#fff;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);font:900 34px 'Big Shoulders Display';text-transform:uppercase}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;color:#fff;overflow:hidden;background:var(--ink) repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px)}
+.sl{position:absolute;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);left:-40%;animation:sl linear infinite;opacity:.5}@keyframes sl{to{transform:translateX(260vw)}}
+.hg{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(60px,10.4vw,170px);font-style:italic}
+.ln{display:block;overflow:hidden;padding:.04em .1em .02em 0}.ln i{display:block;transform:translateX(-110%) skewX(-18deg);animation:sx 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.2s + var(--i)*.15s)}.ln.r i{color:var(--red)}
+@keyframes sx{to{transform:none}}
+.hero p.l{max-width:480px;margin:26px 0 34px;color:#c3c9d4;font-size:19px;animation:fd 1s 1s both}.hb{display:flex;gap:14px;flex-wrap:wrap;animation:fd 1s 1.15s both}@keyframes fd{from{opacity:0;transform:translateY(24px)}}
+.hv{position:relative;aspect-ratio:4/5;max-height:78vh;justify-self:end;width:100%}
+.hv:before{content:"";position:absolute;inset:0;background:var(--red);clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);transform:translate(16px,16px);animation:fd 1s .6s both}
+.hv .im{position:absolute;inset:0;overflow:hidden;background:#1b2029;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);animation:sw 1.4s .4s cubic-bezier(.7,0,.2,1) both}@keyframes sw{from{clip-path:polygon(100% 0,100% 0,100% 100%,100% 100%)}}
+.hv .im img{animation:kb 20s ease-in-out infinite alternate}@keyframes kb{to{transform:scale(1.12)}}
+.gg{position:absolute;left:-30px;bottom:30px;width:min(230px,46%);background:rgba(14,17,22,.82);backdrop-filter:blur(8px);padding:12px;animation:fd 1s 1.6s both;border:1px solid rgba(255,255,255,.15)}
+.gg svg{width:100%;display:block}.gg circle{fill:none;stroke-width:9}.gg .bg{stroke:rgba(255,255,255,.2);stroke-dasharray:75 100}.gg .pg{stroke:var(--red);stroke-dasharray:0 100;animation:gp 2.8s 1.8s cubic-bezier(.3,.8,.2,1) forwards}
+@keyframes gp{to{stroke-dasharray:62 100}}.gg .n{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:900 46px 'Big Shoulders Display';line-height:.9}.gg small{font:600 12px Barlow;letter-spacing:.14em;color:var(--st)}
+.mq{background:var(--red);color:#fff;overflow:hidden;padding:16px 0;transform:skewY(-1.2deg);margin:-8px 0}.mq div{display:flex;width:max-content;animation:mq 30s linear infinite}.mq span{font:900 34px 'Big Shoulders Display';text-transform:uppercase;font-style:italic;padding-right:34px;white-space:nowrap}.mq span:nth-child(even){color:var(--ink)}@keyframes mq{to{transform:translateX(-50%)}}
+/* collection */
+.hd{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}.hd p{max-width:380px;color:#586070}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.pc{position:relative;background:var(--gr);padding:20px 20px 24px;overflow:hidden;transition:transform .4s,box-shadow .4s}.pc:hover{transform:translateY(-8px);box-shadow:0 30px 50px -28px rgba(14,17,22,.6)}
+.pc .no{position:absolute;right:10px;top:-8px;font:900 120px 'Big Shoulders Display';color:transparent;-webkit-text-stroke:1.5px rgba(14,17,22,.18);line-height:1}
+.pc svg{position:relative;width:70%;margin:0 auto;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.pc:hover svg{transform:scale(1.08) rotate(-3deg)}
+.pc h3{font-size:30px;margin-top:6px}.pc p{color:#586070;font-size:15px}.pc .rw{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.pc b{font:800 26px 'Big Shoulders Display'}
+.ad{border:0;background:var(--ink);color:#fff;font:700 13px Barlow;letter-spacing:.08em;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:.2s}.ad:hover{background:var(--red)}
+/* tech */
+.tc{position:relative;background:var(--ink);color:#fff;overflow:hidden}.tci{position:absolute;left:0;top:-20%;height:140%;opacity:.35;filter:grayscale(1)}
+.tc .wrap{position:relative}.tc h2{max-width:900px}.ts{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}
+.ts div{border-top:3px solid var(--red);padding-top:18px}.ts strong{display:block;font:900 clamp(60px,8vw,110px)/.9 'Big Shoulders Display';font-style:italic}.ts span{color:#c3c9d4}
+/* configurator */
+.cf{background:var(--gr);position:relative;overflow:hidden}.cf .bn{position:absolute;right:-2%;top:2%;font:900 clamp(200px,34vw,520px)/.8 'Big Shoulders Display';color:transparent;-webkit-text-stroke:2px rgba(14,17,22,.1);font-style:italic;pointer-events:none}
+.cx{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center;margin-top:30px}
+.su{position:relative;max-width:420px;margin:0 auto;width:100%;filter:drop-shadow(0 40px 30px rgba(14,17,22,.3))}.su svg{display:block;width:100%}
+.hs{position:absolute;width:30px;height:30px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:var(--red);cursor:pointer}.hs:before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--red);animation:pu 2s ease-out infinite}@keyframes pu{to{transform:scale(2.2);opacity:0}}
+.hs i{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;background:#fff;border-radius:50%}
+.tp{position:absolute;left:50%;bottom:130%;transform:translateX(-50%) translateY(8px);width:210px;background:var(--ink);color:#fff;padding:12px 14px;font-size:14px;line-height:1.4;opacity:0;pointer-events:none;transition:.25s;text-align:left;z-index:3}.tp b{display:block;font:800 18px 'Big Shoulders Display';text-transform:uppercase;color:var(--red)}
+.hs:hover .tp,.hs:focus .tp{opacity:1;transform:translateX(-50%)}
+.cn h2{font-size:clamp(40px,5.6vw,80px)}.lb{font:700 14px Barlow;letter-spacing:.12em;text-transform:uppercase;margin:26px 0 10px;display:block}
+.sw{display:flex;gap:12px;flex-wrap:wrap}.sw button{width:62px;height:62px;border:3px solid transparent;cursor:pointer;background:conic-gradient(from 135deg,var(--c1) 50%,var(--c2) 50%);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:transform .2s;position:relative}.sw button.on{outline:3px solid var(--ink);outline-offset:-3px;transform:translateY(-6px)}
+.sz{display:flex;gap:8px;flex-wrap:wrap}.sz button{min-width:54px;padding:12px 14px;background:#fff;border:1.5px solid var(--ink);font:700 15px Barlow;cursor:pointer;transition:.2s}.sz button.on{background:var(--ink);color:#fff}
+.pr{display:flex;align-items:end;gap:20px;flex-wrap:wrap;margin-top:32px}.pr strong{font:900 56px 'Big Shoulders Display';line-height:1}.pr small{display:block;color:#586070}
+.cn .nm{font:700 20px Barlow;margin-top:10px}
+/* ride log */
+.rl{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-top:48px;height:460px}.rl figure{position:relative;overflow:hidden;background:var(--ink);clip-path:polygon(0 0,100% 0,calc(100% - 22px) 100%,0 100%)}.rl img{transition:transform 1.2s}.rl figure:hover img{transform:scale(1.08)}
+.rl figcaption{position:absolute;left:0;right:0;bottom:0;padding:50px 24px 22px;color:#fff;background:linear-gradient(transparent,rgba(14,17,22,.9));font:900 30px 'Big Shoulders Display';text-transform:uppercase;font-style:italic}.rl small{display:block;font:500 14px Barlow;text-transform:none;font-style:normal;color:#c3c9d4}
+/* reviews */
+.rv3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}.rv3 blockquote{background:var(--gr);padding:30px;position:relative;font-size:18px}.rv3 blockquote:before{content:"“";position:absolute;right:20px;top:-6px;font:900 110px 'Big Shoulders Display';color:var(--red);line-height:1}
+.rv3 cite{display:block;margin-top:18px;font:700 15px Barlow;font-style:normal;color:#586070}.st{color:var(--red);letter-spacing:3px;margin-bottom:8px}
+/* join */
+.jn{background:var(--red);color:#fff;padding:clamp(60px,8vw,100px) 0}.jg{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}.jn h2{font-size:clamp(42px,6vw,88px)}
+form{display:grid;gap:12px}form input{padding:17px 18px;border:0;font:inherit;width:100%;min-width:0}form input:focus{outline:3px solid var(--ink)}
+footer{background:var(--ink);color:#9aa3b2;padding:60px 0 30px;font-size:15px}.fr{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}footer .logo{color:#fff;margin-bottom:12px}footer ul{list-style:none;display:grid;gap:8px}footer h4{color:#fff;font:800 20px 'Big Shoulders Display';text-transform:uppercase;margin-bottom:10px}
+.fb{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}.fb a{color:#fff;font-weight:700;border-bottom:2px solid var(--red)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:16px 24px;z-index:70;font-weight:600;border-left:5px solid var(--red);transition:transform .5s cubic-bezier(.2,.8,.2,1);max-width:92vw}.toast.on{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(44px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0)*90ms)}.rv.in{opacity:1;transform:none}
+.pc.rv.in:hover{transform:translateY(-8px)}
+@media(max-width:1000px){.lk,.nr>.btn{display:none}.bgr{display:block}.hg,.cx,.jg{grid-template-columns:1fr}.hv{max-width:480px;justify-self:center;margin:20px 0 0 30px}.cg{grid-template-columns:1fr 1fr}.rv3{grid-template-columns:1fr}.rl{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:260px}.rl figure:first-child{grid-column:1/-1}}
+@media(max-width:640px){body{font-size:16px}.wrap{padding:0 18px}.cg{grid-template-columns:1fr}.ts{grid-template-columns:1fr}.rl{grid-template-columns:1fr}.gg{left:-6px}.pr strong{font-size:46px}.sw button{width:54px;height:54px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.ln i{transform:none}.hv .im{clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}.gg .pg{stroke-dasharray:62 100}}
+</style>
+</head>
+<body>
+<div class="pbar" id="pb"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="arm"><path d="M92 70 58 84 50 118 86 112Z" style="fill:var(--a)"/><path d="M50 118 86 112 82 190 44 196Z" style="fill:var(--m)"/><path d="M44 196 82 190 70 290 34 282Z" style="fill:var(--m)"/><ellipse cx="63" cy="193" rx="15" ry="9" fill="#2a2e36"/><path d="M34 282 70 290 66 332 28 322Z" fill="#2a2e36"/><path d="M52 124 80 119" stroke="var(--a)" stroke-width="5"/></g>
+<g id="leg"><path d="M88 250H150L146 372 84 374Z" style="fill:var(--m)"/><path d="M84 374 146 372 140 500 90 502Z" style="fill:var(--m)"/><path d="M134 252H150L143 500H130Z" style="fill:var(--a)"/><ellipse cx="112" cy="376" rx="21" ry="10" fill="#2a2e36" stroke="#8b93a1" stroke-width="2"/><path d="M88 500 142 498 148 532H78Z" fill="#2a2e36"/></g>
+<symbol id="su" viewBox="0 0 300 540"><path d="M118 38Q150 58 182 38L192 70H108Z" fill="#16181d"/><path d="M92 70H208L220 150 212 250H88L80 150Z" style="fill:var(--m)"/><path d="M100 90 150 126 200 90V112L150 150 100 112Z" style="fill:var(--a)"/><use href="#arm"/><use href="#arm" transform="translate(300) scale(-1 1)"/><use href="#leg"/><use href="#leg" transform="translate(300) scale(-1 1)"/><rect x="88" y="236" width="124" height="16" fill="#16181d"/><text x="150" y="228" text-anchor="middle" font-family="Big Shoulders Display,Impact" font-weight="900" font-size="34" style="fill:var(--a)">46</text></symbol></defs></svg>
+
+<header id="hd"><div class="wrap"><nav class="nv" aria-label="Main"><a class="logo" href="#top"><i></i>VELOCE</a>
+<div class="lk"><a href="#collection">Collection</a><a href="#tech">Protection</a><a href="#build">Build yours</a><a href="#rides">Ride log</a><a href="#join">Pit crew</a></div>
+<div class="nr"><a class="btn" href="#build" style="padding:13px 26px">Build your suit</a><button class="ct" id="ct" aria-label="Cart"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 4h3l2.5 11h9L20 7H7"/><circle cx="10" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><b id="cn">0</b></button><button class="bgr" id="bgr" aria-label="Open menu" aria-expanded="false" aria-controls="mp"><span></span><span></span></button></div></nav></div></header>
+<div class="mp" id="mp"><a href="#collection">Collection</a><a href="#tech">Protection</a><a href="#build">Build yours</a><a href="#rides">Ride log</a><a href="#join">Pit crew</a></div>
+
+<main id="top">
+<section class="hero" id="hero" style="padding-top:110px"><div id="sls"></div><div class="wrap hg">
+<div><h1 aria-label="Born on track. Built for the road."><span class="ln"><i style="--i:0">Born on</i></span><span class="ln r"><i style="--i:1">the track.</i></span><span class="ln"><i style="--i:2">Built for</i></span><span class="ln r"><i style="--i:3">the road.</i></span></h1>
+<p class="l">Race-grade leather suits, CE Level 2 armour and airbag-ready protection, engineered with track riders and shipped across Pakistan.</p>
+<div class="hb"><a class="btn" href="#collection">Shop suits</a><a class="btn bo" href="#build">Build yours</a></div></div>
+<div class="hv"><div class="im"><img id="hi" alt="Rider leaning into a corner" onerror="this.remove()"></div>
+<div class="gg" aria-hidden="true"><div style="position:relative"><svg viewBox="0 0 200 200"><circle class="bg" cx="100" cy="100" r="84" pathLength="100" transform="rotate(135 100 100)"/><circle class="pg" cx="100" cy="100" r="84" pathLength="100" transform="rotate(135 100 100)"/></svg><div class="n"><span id="kmh">0</span><small>KM/H</small></div></div></div></div>
+</div></section>
+<div class="mq" aria-hidden="true"><div id="mt"></div></div>
+
+<section id="collection"><div class="wrap"><div class="hd"><h2 class="rv">Race<br>collection</h2><p class="rv">Four suits, one standard: full-grain kangaroo leather, double-stitched seams and certified armour at every impact point.</p></div>
+<div class="cg">
+<article class="pc rv" style="--m:#e5161d;--a:#f4f4f5"><span class="no">01</span><svg viewBox="0 0 300 540" role="img" aria-label="Rosso race suit"><use href="#su"/></svg><h3>R1 Rosso</h3><p>Full race suit · Kangaroo leather</p><div class="rw"><b>Rs 189,000</b><button class="ad" data-n="R1 Rosso" data-p="189000">Add</button></div></article>
+<article class="pc rv" style="--m:#1d4ed8;--a:#ffd60a"><span class="no">02</span><svg viewBox="0 0 300 540" role="img" aria-label="Cobalt race suit"><use href="#su"/></svg><h3>Apex Cobalt</h3><p>Full race suit · Airbag ready</p><div class="rw"><b>Rs 215,000</b><button class="ad" data-n="Apex Cobalt" data-p="215000">Add</button></div></article>
+<article class="pc rv" style="--m:#2b2f38;--a:#8b93a1"><span class="no">03</span><svg viewBox="0 0 300 540" role="img" aria-label="Stealth race suit"><use href="#su"/></svg><h3>Phantom Stealth</h3><p>Full race suit · Matte finish</p><div class="rw"><b>Rs 198,000</b><button class="ad" data-n="Phantom Stealth" data-p="198000">Add</button></div></article>
+<article class="pc rv" style="--m:#f1f1f1;--a:#e5161d"><span class="no">04</span><svg viewBox="0 0 300 540" role="img" aria-label="Pearl race suit"><use href="#su"/></svg><h3>Pearl Edition</h3><p>Full race suit · Limited run</p><div class="rw"><b>Rs 232,000</b><button class="ad" data-n="Pearl Edition" data-p="232000">Add</button></div></article>
+</div></div></section>
+
+<section class="tc" id="tech"><img class="tci" id="tci" alt="" onerror="this.remove()"><div class="wrap"><h2 class="rv">Tested at speeds<br>you hope to never reach</h2>
+<div class="ts"><div class="rv"><strong data-n="300" data-s="">0</strong><span>km/h slide-tested at certified labs</span></div><div class="rv"><strong data-n="25" data-s="ms">0</strong><span>airbag deployment, hip to collarbone</span></div><div class="rv"><strong data-n="5" data-s=" yr">0</strong><span>warranty on every seam and zip</span></div></div></div></section>
+
+<section class="cf" id="build"><div class="bn" aria-hidden="true">46</div><div class="wrap"><div class="cx">
+<div class="su" id="su"><svg viewBox="0 0 300 540" role="img" aria-label="Your custom suit preview"><use href="#su"/></svg>
+<button class="hs" style="left:22%;top:16%" aria-label="Shoulder armour"><i></i><span class="tp"><b>Shoulder armour</b>CE Level 2 D3O. Absorbs 80% more impact.</span></button>
+<button class="hs" style="left:50%;top:25%" aria-label="Airbag zone"><i></i><span class="tp"><b>Airbag zone</b>Compatible with all major airbag systems.</span></button>
+<button class="hs" style="left:21%;top:36%" aria-label="Elbow armour"><i></i><span class="tp"><b>Elbow armour</b>Floating CE Level 2 protectors with slide pads.</span></button>
+<button class="hs" style="left:38%;top:70%" aria-label="Knee sliders"><i></i><span class="tp"><b>Knee sliders</b>Replaceable titanium-backed sliders.</span></button></div>
+<div class="cn"><h2 class="rv">Build<br>your suit</h2><p class="nm" id="nm">Rosso</p>
+<span class="lb">Colourway</span><div class="sw" id="sw"></div>
+<span class="lb">Size</span><div class="sz" id="sz"><button>S</button><button>M</button><button class="on">L</button><button>XL</button><button>XXL</button></div>
+<div class="pr"><div><small>Custom made, ships in 3 weeks</small><strong id="pp">Rs 189,000</strong></div><button class="btn" id="bb">Add to cart</button></div></div>
+</div></div></section>
+
+<section id="rides"><div class="wrap"><h2 class="rv">Ride log</h2>
+<div class="rl"><figure class="rv"><img data-i="1558981806-ec527fa84c39" alt="Rider on the coastal highway" loading="lazy" onerror="this.remove()"><figcaption>Makran Coastal Highway<small>650 km of open tarmac</small></figcaption></figure>
+<figure class="rv"><img data-i="1568772585407-9361f9bf3a87" alt="Rider in the mountains" loading="lazy" onerror="this.remove()"><figcaption>Karakoram Highway<small>Skardu to Hunza</small></figcaption></figure>
+<figure class="rv"><img data-i="1609630875171-b1321377ee65" alt="Motorcycle at dusk" loading="lazy" onerror="this.remove()"><figcaption>Hawks Bay at dusk<small>Sunday morning run</small></figcaption></figure></div>
+<div class="rv3"><blockquote class="rv"><div class="st">★★★★★</div>Slid 40 metres on the Super Moto at Karachi circuit and walked away with a scuffed shoulder. The suit did its job.<cite>Hamza Ali, track rider</cite></blockquote>
+<blockquote class="rv"><div class="st">★★★★★</div>Fits like a second skin and the airbag integration is seamless. Better than imported brands at twice the price.<cite>Ayesha Tariq, tourer</cite></blockquote>
+<blockquote class="rv"><div class="st">★★★★★</div>Ordered custom Cobalt. Colour matched my bike perfectly and arrived in exactly three weeks.<cite>Zain Sheikh, Ducati owner</cite></blockquote></div></div></section>
+
+<section class="jn" id="join"><div class="wrap jg"><div><h2>Join the<br>pit crew</h2><p style="margin-top:14px;font-size:19px;max-width:440px">First access to limited drops and 10% off your first suit.</p></div>
+<form id="fm" novalidate><input id="fe" type="text" placeholder="Your name" autocomplete="name" aria-label="Name"><input id="fp" type="tel" placeholder="Phone or WhatsApp number" autocomplete="tel" aria-label="Phone"><button class="btn bk" type="submit">Get early access</button></form></div></section>
+</main>
+<footer><div class="wrap"><div class="fr"><div><a class="logo" href="#top"><i></i>VELOCE</a><p style="max-width:300px">Race-grade riding gear made for Pakistan's roads and tracks.</p></div><div><h4>Showroom</h4><ul><li>Shahrah-e-Faisal, Karachi</li><li><a href="tel:+922135004400">021 3500 4400</a></li><li><a href="mailto:ride@veloce.demo">ride@veloce.demo</a></li></ul></div><div><h4>Hours</h4><ul><li>Mon to Sat, 11 AM to 9 PM</li><li>Custom fittings by appointment</li></ul></div></div>
+<div class="fb"><span>© 2026 Veloce. Demo website.</span><span>Designed &amp; developed by <a href="#">Aevora Studio</a></span></div></div></footer>
+<div class="toast" id="ts" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const U=(id,w=1400)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+$('#hi').src=U('1558981806-ec527fa84c39',1000);$('#tci').src=U('1449426468159-d96dbf08f19f',1800);$$('img[data-i]').forEach(i=>i.src=U(i.dataset.i,1000));
+$('#mt').innerHTML=('<span>CE Level 2</span><span>Kangaroo leather</span><span>Airbag ready</span><span>Track tested</span><span>5 year warranty</span>').repeat(2);
+$('#sls').innerHTML=Array.from({length:16},()=>`<span class="sl" style="top:${Math.random()*100}%;width:${120+Math.random()*320}px;animation-duration:${1.6+Math.random()*2.4}s;animation-delay:${Math.random()*3}s"></span>`).join('');
+// speed counter
+(function(){const el=$('#kmh'),t0=performance.now()+1800;(function f(t){const k=Math.max(0,Math.min((t-t0)/2800,1));el.textContent=Math.round(248*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(performance.now())})();
+// header
+const hd=$('#hd'),mp=$('#mp'),bgr=$('#bgr'),secs=['collection','tech','build','rides','join'].map(i=>$('#'+i)),lk=$$('.lk a');
+function menu(v){mp.classList.toggle('o',v);bgr.classList.toggle('o',v);bgr.setAttribute('aria-expanded',v);bgr.setAttribute('aria-label',v?'Close menu':'Open menu');hd.classList.toggle('s',v||scrollY>40)}
+bgr.onclick=()=>menu(!mp.classList.contains('o'));$$('#mp a').forEach(a=>a.onclick=()=>menu(false));
+addEventListener('keydown',e=>e.key=='Escape'&&menu(false));addEventListener('resize',()=>innerWidth>1000&&menu(false));
+addEventListener('scroll',()=>{hd.classList.toggle('s',scrollY>40||mp.classList.contains('o'));$('#pb').style.transform=`scaleX(${scrollY/(document.documentElement.scrollHeight-innerHeight)})`;
+let c=-1;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<160)c=i});lk.forEach((a,i)=>a.classList.toggle('act',i==c));
+const t=$('#tci');if(t)t.style.transform=`translateY(${$('#tech').getBoundingClientRect().top*-.15}px)`},{passive:true});
+// reveal + counters
+$$('.ts>div').forEach(e=>e.classList.add('rv'));$$('.rv').forEach(e=>e.style.setProperty('--d',[...e.parentNode.children].indexOf(e)));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);e.target.classList.add('in');
+e.target.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,t0=performance.now();(function f(t){const k=Math.min((t-t0)/1800,1);el.textContent=Math.round(n*(1-Math.pow(1-k,4)))+el.dataset.s;if(k<1)requestAnimationFrame(f)})(t0)})}),{threshold:.15});
+$$('.rv').forEach(e=>io.observe(e));
+// cart + toast
+let cart=[],tt;const money=n=>'Rs '+n.toLocaleString('en-PK');
+function toast(m){const t=$('#ts');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
+function add(n,p){cart.push([n,p]);$('#cn').textContent=cart.length;$('#ct').classList.add('bump');setTimeout(()=>$('#ct').classList.remove('bump'),300);toast(`${n} added · ${money(p)}`)}
+$$('.ad').forEach(b=>b.onclick=()=>add(b.dataset.n,+b.dataset.p));
+$('#ct').onclick=()=>cart.length?open('https://wa.me/920000000000?text='+encodeURIComponent('Hi Veloce, I want to order: '+cart.map(c=>`${c[0]} (${money(c[1])})`).join(', ')),'_blank'):toast('Your cart is empty. Add a suit first.');
+// configurator
+const CW=[['Rosso','#e5161d','#f4f4f5',189000],['Cobalt','#1d4ed8','#ffd60a',215000],['Stealth','#2b2f38','#8b93a1',198000],['Pearl','#f1f1f1','#e5161d',232000]];let ci=0;
+const su=$('#su');CW.forEach((c,i)=>{const b=document.createElement('button');b.style.setProperty('--c1',c[1]);b.style.setProperty('--c2',c[2]);b.setAttribute('aria-label',c[0]);b.onclick=()=>{ci=i;cw()};$('#sw').append(b)});
+function cw(){const c=CW[ci];su.style.setProperty('--m',c[1]);su.style.setProperty('--a',c[2]);$('#nm').textContent=c[0]+' colourway';$('#pp').textContent=money(c[3]);$$('#sw button').forEach((b,i)=>b.classList.toggle('on',i==ci))}cw();
+$$('#sz button').forEach(b=>b.onclick=()=>$$('#sz button').forEach(x=>x.classList.toggle('on',x==b)));
+$('#bb').onclick=()=>add(`Custom ${CW[ci][0]} suit, size ${$('#sz .on').textContent}`,CW[ci][3]);
+$('#fm').onsubmit=e=>{e.preventDefault();if(!$('#fe').value.trim()||$('#fp').value.replace(/\D/g,'').length<10)return toast('Enter your name and a valid phone number.');toast('Welcome to the pit crew. Check WhatsApp for your 10% code.');e.target.reset()};
+</script>
+</body>
+</html>
